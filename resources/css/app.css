@@ -1,4 +1,9 @@
 body{
-    background-color: greenyellow;
-    color: green;
+    background-color: lightblue;
+    color: crimson;
 }
+
+a{
+    color: rgba(9, 166, 14, 0.524);
+}
+

@@ -26,7 +26,7 @@
                 {{$todo->created_at}}
             </td>
             <td>
-                <a href="#">Read More</a>
+                <a href="{{ route('todos.show', $todo->id)}}">Read More</a>
             </td>
         </tr>
 
