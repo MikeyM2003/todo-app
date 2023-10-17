@@ -19,7 +19,7 @@
     </div>
     <div>
         <Label>Description</Label>
-        <input type ="text" name="body" id="body" value="{{old('title')}}/>
+        <input type ="text" name="body" id="body" value="{{old('title')}}"/>
         @if($errors->has('body'))
         <span>{{$errors->first('body')}}</span>
         @endif
