@@ -13,4 +13,6 @@
     <button type="submit">Delete</button>
 </form>
 </div>   
+
+{{Auth::user()->todos}}
 @endsection
