@@ -8,12 +8,23 @@ use Auth;
 
 class TodoController extends Controller
 {
+
+    public function getMyTodos(){
+        $todos = Todo::where('user_id', '=', Auth::id())->get();
+
+        return view('todos.index', [
+            'todos' => $todos
+        ]);
+    }
+
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $todos = Todo::orderBy('created_at', 'desc')->paginate(8);
+        $todos = Todo::orderBy('created_at', 'desc')->get();
 
         return view('todos.index', [
             'todos' => $todos
@@ -49,8 +60,8 @@ class TodoController extends Controller
         $todo = new Todo;
         $todo->title = $request->title;
         $todo->body = $request->body;
-        dd(Auth::user());
-        $todo->user_id = Auth->user();
+        //dd(Auth::user());
+        $todo->user_id = Auth::id();
         $todo->save();
         return redirect()->route('todos.index')->with('status', 'Created a new Todo');
 

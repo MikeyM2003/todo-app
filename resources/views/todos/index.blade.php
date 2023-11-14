@@ -18,6 +18,9 @@
                     Snippit
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    User
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Created
                 </th>
                 
@@ -31,6 +34,9 @@
                 </th>
                 <td class="px-6 py-4">
                     {{$todo->body}}
+                </td>
+                <td class="px-6 py-4">
+                    {{$todo->user_id}}
                 </td>
                 <td class="px-6 py-4">
                     {{$todo->created_at}}

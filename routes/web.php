@@ -23,7 +23,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+Route::get('/todos/mine', [TodoController::class, 'getMyTodos']);
 Route::resource('todos', TodoController::class);
+
 
 
 Route::middleware('auth')->group(function () {
